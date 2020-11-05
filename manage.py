@@ -18,8 +18,8 @@ manager = Manager(app)
 manager.add_command('server',Server)
 
 #create migrate instance
-# migrate = Migrate(app,db)
-# manager.add_command('db',MigrateCommand)
+migrate = Migrate(app,db)
+manager.add_command('db',MigrateCommand)
 
 
 
