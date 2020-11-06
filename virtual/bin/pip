@@ -1,4 +1,4 @@
-#!/home/bernard/bursarykit/virtual/bin/python3
+#!/home/moringa/Desktop/FullStack/Projects/bursary-kit/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
