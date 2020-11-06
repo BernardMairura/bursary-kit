@@ -7,22 +7,23 @@ from .import  db
 class User(db.Model):
     __tablename__ ='users'
     id=db.Column(db.Integer,primary_key=True)
-    # username=db.Column(db.String(255))
-    role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    username=db.Column(db.String(50))
+    admin=db.Column(db.Boolean)
 
 
     def __repr__(self):
         return f'User{self.username}'
 
 
-class Roles(db.Model):
-    __tablename__ ='roles'
+class Question(db.Model):
+    __tablename__ ='questions'
     id=db.Column(db.Integer,primary_key=True)
-    # name=db.Column(db.string(255))
-    users = db.relationship('User',backref = 'role',lazy="dynamic")
+    question_text=db.Column(db.text)
+    answer=db.Column(db.text)
+    asked_by_id=db.Column(db.Integer,db.ForeignKey('user_id'))
 
-    def __repr__(self):
-        return f'User{self.name}'
+
+
 
 
 
